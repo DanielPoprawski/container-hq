@@ -13,14 +13,13 @@ const Footer = () => {
                               </div>
                               <div>
                                     <h3 className="text-xl font-bold mb-4">Hours</h3>
-                                    <p className="mb-2">Monday-Friday: 9am-5pm</p>
-                                    <p className="mb-2">Saturday: 10am-2pm</p>
+                                    <p className="mb-2">Monday-Saturday: 9am-5pm</p>
                                     <p>Sunday: Closed</p>
                               </div>
                               <div>
                                     <h3 className="text-xl font-bold mb-4">Contact</h3>
                                     <p className="mb-2">Phone: (941) 301-8319</p>
-                                    <p className="mb-2">Email: info@container-hq.com</p>
+                                    <p className="mb-2">Email: support@container-hq.com</p>
                                     <div className="flex space-x-4 mt-4">
                                           <a href="#" className="text-white hover:text-red-600">
                                                 <i className="fab fa-facebook-f"></i>

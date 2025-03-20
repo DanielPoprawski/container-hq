@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router";
 
-const Header = ({ activeSection, handleScroll, isMenuOpen, setIsMenuOpen }) => {
+const Header = ({ isMenuOpen, setIsMenuOpen }) => {
       return (
             <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
                   <div className="container mx-auto px-4">
@@ -19,51 +20,23 @@ const Header = ({ activeSection, handleScroll, isMenuOpen, setIsMenuOpen }) => {
 
                               {/* Desktop Navigation */}
                               <nav className="hidden md:flex space-x-6">
+                                          <Link to="/" className="font-medium transition hover:text-red-600">Home</Link>
                                     <a
                                           href="#"
                                           onClick={(e) => {
                                                 e.preventDefault();
-                                                handleScroll("home");
                                           }}
-                                          className={`font-medium transition hover:text-red-600 ${
-                                                activeSection === "home" ? "text-red-600" : ""
-                                          }`}
-                                    >
-                                          Home
-                                    </a>
-                                    <a
-                                          href="#"
-                                          onClick={(e) => {
-                                                e.preventDefault();
-                                                handleScroll("about");
-                                          }}
-                                          className={`font-medium transition hover:text-red-600 ${
-                                                activeSection === "about" ? "text-red-600" : ""
-                                          }`}
+                                          className={`font-medium transition hover:text-red-600 `}
                                     >
                                           About
                                     </a>
+                                          <Link className="font-medium transition hover:text-red-600" to="/services">Services</Link>
                                     <a
                                           href="#"
                                           onClick={(e) => {
                                                 e.preventDefault();
-                                                handleScroll("services");
                                           }}
-                                          className={`font-medium transition hover:text-red-600 ${
-                                                activeSection === "services" ? "text-red-600" : ""
-                                          }`}
-                                    >
-                                          Services
-                                    </a>
-                                    <a
-                                          href="#"
-                                          onClick={(e) => {
-                                                e.preventDefault();
-                                                handleScroll("pricing");
-                                          }}
-                                          className={`font-medium transition hover:text-red-600 ${
-                                                activeSection === "pricing" ? "text-red-600" : ""
-                                          }`}
+                                          className={`font-medium transition hover:text-red-600`}
                                     >
                                           Pricing
                                     </a>
@@ -71,17 +44,15 @@ const Header = ({ activeSection, handleScroll, isMenuOpen, setIsMenuOpen }) => {
                                           href="#"
                                           onClick={(e) => {
                                                 e.preventDefault();
-                                                handleScroll("contact");
                                           }}
-                                          className={`font-medium transition hover:text-red-600 ${
-                                                activeSection === "contact" ? "text-red-600" : ""
-                                          }`}
+                                          className={`font-medium transition hover:text-red-600 `}
                                     >
                                           Contact
                                     </a>
                               </nav>
 
                               {/* Phone Number - Desktop */}
+                              {/* TODO: Link to Google page */}
                               <div className="hidden md:flex items-center">
                                     <a href="tel:9413018319" className="flex items-center text-red-600 font-bold">
                                           <i className="fas fa-phone-alt mr-2"></i>
@@ -127,11 +98,8 @@ const Header = ({ activeSection, handleScroll, isMenuOpen, setIsMenuOpen }) => {
                                                 href="#"
                                                 onClick={(e) => {
                                                       e.preventDefault();
-                                                      handleScroll("home");
                                                 }}
-                                                className={`block py-2 ${
-                                                      activeSection === "home" ? "text-red-600" : ""
-                                                }`}
+                                                className={`block py-2`}
                                           >
                                                 Home
                                           </a>
@@ -143,9 +111,7 @@ const Header = ({ activeSection, handleScroll, isMenuOpen, setIsMenuOpen }) => {
                                                       e.preventDefault();
                                                       handleScroll("about");
                                                 }}
-                                                className={`block py-2 ${
-                                                      activeSection === "about" ? "text-red-600" : ""
-                                                }`}
+                                                className={`block py-2 `}
                                           >
                                                 About
                                           </a>
@@ -157,9 +123,7 @@ const Header = ({ activeSection, handleScroll, isMenuOpen, setIsMenuOpen }) => {
                                                       e.preventDefault();
                                                       handleScroll("services");
                                                 }}
-                                                className={`block py-2 ${
-                                                      activeSection === "services" ? "text-red-600" : ""
-                                                }`}
+                                                className={`block py-2 `}
                                           >
                                                 Services
                                           </a>
@@ -171,9 +135,7 @@ const Header = ({ activeSection, handleScroll, isMenuOpen, setIsMenuOpen }) => {
                                                       e.preventDefault();
                                                       handleScroll("pricing");
                                                 }}
-                                                className={`block py-2 ${
-                                                      activeSection === "pricing" ? "text-red-600" : ""
-                                                }`}
+                                                className={`block py-2 `}
                                           >
                                                 Pricing
                                           </a>
@@ -185,9 +147,7 @@ const Header = ({ activeSection, handleScroll, isMenuOpen, setIsMenuOpen }) => {
                                                       e.preventDefault();
                                                       handleScroll("contact");
                                                 }}
-                                                className={`block py-2 ${
-                                                      activeSection === "contact" ? "text-red-600" : ""
-                                                }`}
+                                                className={`block py-2 `}
                                           >
                                                 Contact
                                           </a>

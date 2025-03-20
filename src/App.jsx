@@ -42,12 +42,6 @@ export default function App() {
 
       return (
             <>
-                  <Header
-                        activeSection={activeSection}
-                        handleScroll={handleScroll}
-                        isMenuOpen={isMenuOpen}
-                        setIsMenuOpen={setIsMenuOpen}
-                  />
 
                   <section
                         id="home"
@@ -87,96 +81,7 @@ export default function App() {
                         </div>
                   </section>
                   {/* Services Section */}
-                  <section id="services" className="py-20 bg-gray-100">
-                        <div className="container mx-auto px-4">
-                              <h2 className="text-3xl font-bold text-center mb-12 relative after:content-[''] after:block after:w-16 after:h-1 after:bg-red-600 after:mx-auto after:mt-4">
-                                    Our Services
-                              </h2>
-                              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1">
-                                          <i className="fas fa-car-side text-4xl text-red-600 mb-4"></i>
-                                          <h3 className="text-xl font-bold mb-3">Indoor Car Storage</h3>
-                                          <p className="mb-4">
-                                                Premium indoor vehicle storage with comprehensive care for your
-                                                automobile.
-                                          </p>
-                                          <ul className="list-disc pl-5 mb-4">
-                                                <li>Battery trickle charging</li>
-                                                <li>Tire pressure monitoring</li>
-                                                <li>Car cover included</li>
-                                                <li>Optional car wash services</li>
-                                                <li>Airport shuttle service (coming soon)</li>
-                                          </ul>
-                                          <p className="font-bold">$225/month</p>
-                                    </div>
-                                    <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1">
-                                          <i className="fas fa-trailer text-4xl text-red-600 mb-4"></i>
-                                          <h3 className="text-xl font-bold mb-3">Uncovered Parking</h3>
-                                          <p className="mb-4">
-                                                Secure outdoor parking for boats, trailers, RVs, and other vehicles.
-                                          </p>
-                                          <ul className="list-disc pl-5 mb-4">
-                                                <li>Up to 20ft - $125/month</li>
-                                                <li>Up to 30ft - $180/month</li>
-                                                <li>Up to 40ft - $200/month</li>
-                                          </ul>
-                                          <p>
-                                                Perfect for cars, boats, trailers, and RVs that don't require covered
-                                                protection.
-                                          </p>
-                                    </div>
-                                    <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1">
-                                          <i className="fas fa-caravan text-4xl text-red-600 mb-4"></i>
-                                          <h3 className="text-xl font-bold mb-3">Covered Parking</h3>
-                                          <p className="mb-4">
-                                                Protect your vehicle from the elements with our covered parking options.
-                                          </p>
-                                          <ul className="list-disc pl-5 mb-4">
-                                                <li>Up to 20ft - $150/month</li>
-                                                <li>Up to 30ft - $200/month</li>
-                                                <li>Up to 40ft - $400/month</li>
-                                          </ul>
-                                          <p>
-                                                Ideal for protecting boats, RVs, and vehicles from Florida's sun, rain,
-                                                and weather.
-                                          </p>
-                                    </div>
-                                    <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1">
-                                          <i className="fas fa-box text-4xl text-red-600 mb-4"></i>
-                                          <h3 className="text-xl font-bold mb-3">Storage Units</h3>
-                                          <p className="mb-4">
-                                                Spacious 8x20 storage units for personal belongings, business inventory,
-                                                and more.
-                                          </p>
-                                          <p className="font-bold mb-4">$200/month</p>
-                                          <p>
-                                                Our storage units are clean, secure, and easily accessible when you need
-                                                your items.
-                                          </p>
-                                    </div>
-                                    <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1">
-                                          <i className="fas fa-building text-4xl text-red-600 mb-4"></i>
-                                          <h3 className="text-xl font-bold mb-3">Office Space Rentals</h3>
-                                          <p className="mb-4">Professional office space available for rent.</p>
-                                          <p className="font-bold">Call for availability and pricing</p>
-                                          <p>
-                                                Perfect for small businesses, remote workers, or anyone needing
-                                                professional workspace.
-                                          </p>
-                                    </div>
-                                    <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:-translate-y-1">
-                                          <i className="fas fa-hand-sparkles text-4xl text-red-600 mb-4"></i>
-                                          <h3 className="text-xl font-bold mb-3">Car Wash Services</h3>
-                                          <p className="mb-4">
-                                                Keep your vehicle looking its best with our professional car wash
-                                                services.
-                                          </p>
-                                          <p className="font-bold">Call for packages and pricing</p>
-                                          <p>Available as an add-on service for our indoor car storage customers.</p>
-                                    </div>
-                              </div>
-                        </div>
-                  </section>
+                  
                   {/* About Section */}
                   <section id="about" className="py-20">
                         <div className="container mx-auto px-4">
@@ -185,26 +90,12 @@ export default function App() {
                               </h2>
 
                               <div>
-                                    <h3 className="text-2xl font-bold mb-4">
+                                    <h3 className="text-3xl font-bold mb-4">
                                           Sarasota's Premier Automotive and Self Storage Provider
                                     </h3>
-                                    <p className="mb-4">
-                                          Container HQ Automotive and Self Storage offers comprehensive storage
-                                          solutions for vehicles, boats, RVs, and personal belongings in Sarasota. Our
-                                          secure facility provides a range of options to meet your specific storage
-                                          needs.
+                                    <p className="mb-4 text-xl">
+                                          &emsp; At Container HQ, we have established ourselves as a comperhensive dependable, and hassle free storage provider for Sarasota. We offer a secure, 24/7 monitored outdoor storage lot for cars, boats and RVs, as well as a premier indoor car storage garage for seasonal parking. We pride ourselves on our customer reviews, just see what our clients have to say about us:
                                     </p>
-                                    <p className="mb-4">
-                                          We specialize in indoor car storage with premium care services, covered and
-                                          uncovered parking for boats and RVs, storage units, and even office space
-                                          rentals.
-                                    </p>
-                                    <ul className="list-disc pl-5 mb-4">
-                                          <li>Conveniently located in Sarasota</li>
-                                          <li>Flexible monthly rental options</li>
-                                          <li>Competitive pricing</li>
-                                          <li>Airport shuttle service for indoor customers (coming soon)</li>
-                                    </ul>
                               </div>
                         </div>
                   </section>
@@ -498,10 +389,15 @@ export default function App() {
 
                                           <div className="mb-6">
                                                 <h4 className="font-bold mb-2">Office Hours</h4>
-                                                <p>Monday-Friday: 9am-5pm</p>
-                                                <p>Saturday: 10am-2pm</p>
+                                                <p>Monday- Saturday: 9am-5pm</p>
                                                 <p>Sunday: Closed</p>
                                           </div>
+
+                                          {/* <div className="mb-6">
+                                                <h4 className="font-bold mb-2">Gate Hours</h4>
+                                                <p>Monday-Saturday: 5pm - 9am</p>
+                                                <p>Sunday: 5am - 9pm</p>
+                                          </div> */}
 
                                           <div className="mb-6">
                                                 <h4 className="font-bold mb-2">Contact Info</h4>
@@ -615,7 +511,6 @@ export default function App() {
                               </div>
                         </div>
                   </section>
-                  <Footer />
             </>
       );
 }
