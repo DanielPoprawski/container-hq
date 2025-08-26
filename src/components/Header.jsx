@@ -1,60 +1,61 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router";
 
-const Header = ({ isMenuOpen, setIsMenuOpen }) => {
+const Header = () => {
+      const [isMenuOpen, setIsMenuOpen] = useState(false);
+      const navigate = useNavigate();
+
+      const handleHomeScroll = (sectionId) => {
+            navigate('/');
+            setTimeout(() => {
+                  document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+            setIsMenuOpen(false);
+      };
+
       return (
             <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
                   <div className="container mx-auto px-4">
                         <div className="flex justify-between items-center py-4">
-                              <div className="flex items-center">
+                              <Link to="/" className="flex items-center">
                                     <img
-                                          src="/public/coloredlogo.png"
+                                          src="/coloredlogo.png"
                                           alt="Container HQ Logo"
-                                          className="h-10 w-auto mr-3"
+                                          className="h-12 w-auto mr-3"
                                     />
                                     <div>
                                           <h1 className="text-xl font-bold text-red-600">Container HQ</h1>
-                                          <p className="text-xs text-gray-600">Automotive & Self Storage</p>
+                                          <p className="text-sm text-gray-600">Automotive & Self Storage</p>
                                     </div>
-                              </div>
+                              </Link>
 
                               {/* Desktop Navigation */}
-                              <nav className="hidden md:flex space-x-6">
-                                          <Link to="/" className="font-medium transition hover:text-red-600">Home</Link>
-                                    <a
-                                          href="#"
-                                          onClick={(e) => {
-                                                e.preventDefault();
-                                          }}
-                                          className={`font-medium transition hover:text-red-600 `}
+                              <nav className="hidden md:flex space-x-8">
+                                    <Link to="/" className="font-semibold transition hover:text-red-600">Home</Link>
+                                    <button
+                                          onClick={() => handleHomeScroll("about")}
+                                          className="font-semibold transition hover:text-red-600"
                                     >
                                           About
-                                    </a>
-                                          <Link className="font-medium transition hover:text-red-600" to="/services">Services</Link>
-                                    <a
-                                          href="#"
-                                          onClick={(e) => {
-                                                e.preventDefault();
-                                          }}
-                                          className={`font-medium transition hover:text-red-600`}
+                                    </button>
+                                    <Link className="font-semibold transition hover:text-red-600" to="/services">Services</Link>
+                                    <button
+                                          onClick={() => handleHomeScroll("pricing")}
+                                          className="font-semibold transition hover:text-red-600"
                                     >
                                           Pricing
-                                    </a>
-                                    <a
-                                          href="#"
-                                          onClick={(e) => {
-                                                e.preventDefault();
-                                          }}
-                                          className={`font-medium transition hover:text-red-600 `}
+                                    </button>
+                                    <button
+                                          onClick={() => handleHomeScroll("contact")}
+                                          className="font-semibold transition hover:text-red-600"
                                     >
                                           Contact
-                                    </a>
+                                    </button>
                               </nav>
 
                               {/* Phone Number - Desktop */}
-                              {/* TODO: Link to Google page */}
                               <div className="hidden md:flex items-center">
-                                    <a href="tel:9413018319" className="flex items-center text-red-600 font-bold">
+                                    <a href="tel:9413018319" className="flex items-center text-red-600 font-bold text-lg hover:text-red-700 transition">
                                           <i className="fas fa-phone-alt mr-2"></i>
                                           (941) 301-8319
                                     </a>
@@ -94,66 +95,49 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
                         <nav className="container mx-auto px-4 py-3">
                               <ul>
                                     <li>
-                                          <a
-                                                href="#"
-                                                onClick={(e) => {
-                                                      e.preventDefault();
-                                                }}
-                                                className={`block py-2`}
+                                          <Link
+                                                to="/"
+                                                onClick={() => setIsMenuOpen(false)}
+                                                className="block py-3 font-semibold hover:text-red-600 transition"
                                           >
                                                 Home
-                                          </a>
+                                          </Link>
                                     </li>
                                     <li>
-                                          <a
-                                                href="#"
-                                                onClick={(e) => {
-                                                      e.preventDefault();
-                                                      handleScroll("about");
-                                                }}
-                                                className={`block py-2 `}
+                                          <button
+                                                onClick={() => handleHomeScroll("about")}
+                                                className="block py-3 font-semibold hover:text-red-600 transition w-full text-left"
                                           >
                                                 About
-                                          </a>
+                                          </button>
                                     </li>
                                     <li>
-                                          <a
-                                                href="#"
-                                                onClick={(e) => {
-                                                      e.preventDefault();
-                                                      handleScroll("services");
-                                                }}
-                                                className={`block py-2 `}
+                                          <Link
+                                                to="/services"
+                                                onClick={() => setIsMenuOpen(false)}
+                                                className="block py-3 font-semibold hover:text-red-600 transition"
                                           >
                                                 Services
-                                          </a>
+                                          </Link>
                                     </li>
                                     <li>
-                                          <a
-                                                href="#"
-                                                onClick={(e) => {
-                                                      e.preventDefault();
-                                                      handleScroll("pricing");
-                                                }}
-                                                className={`block py-2 `}
+                                          <button
+                                                onClick={() => handleHomeScroll("pricing")}
+                                                className="block py-3 font-semibold hover:text-red-600 transition w-full text-left"
                                           >
                                                 Pricing
-                                          </a>
+                                          </button>
                                     </li>
                                     <li>
-                                          <a
-                                                href="#"
-                                                onClick={(e) => {
-                                                      e.preventDefault();
-                                                      handleScroll("contact");
-                                                }}
-                                                className={`block py-2 `}
+                                          <button
+                                                onClick={() => handleHomeScroll("contact")}
+                                                className="block py-3 font-semibold hover:text-red-600 transition w-full text-left"
                                           >
                                                 Contact
-                                          </a>
+                                          </button>
                                     </li>
-                                    <li className="py-2">
-                                          <a href="tel:9413018319" className="flex items-center text-red-600 font-bold">
+                                    <li className="py-3 border-t border-gray-200">
+                                          <a href="tel:9413018319" className="flex items-center text-red-600 font-bold text-lg">
                                                 <i className="fas fa-phone-alt mr-2"></i>
                                                 (941) 301-8319
                                           </a>

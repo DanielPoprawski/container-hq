@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Star, BadgeCheck } from "lucide-react";
+import { Link } from "react-router";
 
 export default function App() {
-      const [activeSection, setActiveSection] = useState("home");
-      const [isMenuOpen, setIsMenuOpen] = useState(false);
+      // Removed unused state variables
       const [formData, setFormData] = useState({
             name: "",
             email: "",
@@ -15,8 +15,6 @@ export default function App() {
       });
 
       const handleScroll = (sectionId) => {
-            setActiveSection(sectionId);
-            setIsMenuOpen(false);
             document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
       };
 
@@ -81,6 +79,98 @@ export default function App() {
                         </div>
                   </section>
                   {/* Services Section */}
+                  <section id="services" className="py-20 bg-gray-100">
+                        <div className="container mx-auto px-4">
+                              <h2 className="text-3xl font-bold text-center mb-12 relative after:content-[''] after:block after:w-16 after:h-1 after:bg-red-600 after:mx-auto after:mt-4">
+                                    Our Services
+                              </h2>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                                    <div className="bg-white rounded-lg shadow-lg overflow-hidden relative">
+                                          <img 
+                                                src="/api/placeholder/400/250" 
+                                                alt="Indoor Car Storage" 
+                                                className="w-full h-48 object-cover"
+                                          />
+                                          <div className="absolute inset-x-0 top-40 bg-white bg-opacity-90 px-6 py-2">
+                                                <h3 className="text-2xl font-bold text-center text-gray-800">Indoor Car Storage</h3>
+                                          </div>
+                                          <div className="p-6 pt-8">
+                                                <p className="text-lg mb-4">Climate-controlled indoor parking with 24/7 monitoring, battery charging, and car covers.</p>
+                                                <p className="text-xl font-bold text-red-600 mb-4">$225/month</p>
+                                                <Link 
+                                                      to="/services/indoor-parking"
+                                                      className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition"
+                                                >
+                                                      Learn More
+                                                </Link>
+                                          </div>
+                                    </div>
+
+                                    <div className="bg-white rounded-lg shadow-lg overflow-hidden relative">
+                                          <img 
+                                                src="/api/placeholder/400/250" 
+                                                alt="Outdoor Vehicle Storage" 
+                                                className="w-full h-48 object-cover"
+                                          />
+                                          <div className="absolute inset-x-0 top-40 bg-white bg-opacity-90 px-6 py-2">
+                                                <h3 className="text-2xl font-bold text-center text-gray-800">Outdoor Vehicle Storage</h3>
+                                          </div>
+                                          <div className="p-6 pt-8">
+                                                <p className="text-lg mb-4">Secure outdoor parking for cars, boats, RVs, and trailers with covered and uncovered options.</p>
+                                                <p className="text-xl font-bold text-red-600 mb-4">From $125/month</p>
+                                                <Link 
+                                                      to="/services/outdoor-parking"
+                                                      className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition"
+                                                >
+                                                      Learn More
+                                                </Link>
+                                          </div>
+                                    </div>
+
+                                    <div className="bg-white rounded-lg shadow-lg overflow-hidden relative">
+                                          <img 
+                                                src="/api/placeholder/400/250" 
+                                                alt="Storage Units" 
+                                                className="w-full h-48 object-cover"
+                                          />
+                                          <div className="absolute inset-x-0 top-40 bg-white bg-opacity-90 px-6 py-2">
+                                                <h3 className="text-2xl font-bold text-center text-gray-800">Storage Units</h3>
+                                          </div>
+                                          <div className="p-6 pt-8">
+                                                <p className="text-lg mb-4">Spacious 8x20 storage units for personal belongings and business inventory.</p>
+                                                <p className="text-xl font-bold text-red-600 mb-4">$200/month</p>
+                                                <Link 
+                                                      to="/services/self-storage"
+                                                      className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition"
+                                                >
+                                                      Learn More
+                                                </Link>
+                                          </div>
+                                    </div>
+
+                                    <div className="bg-white rounded-lg shadow-lg overflow-hidden relative">
+                                          <img 
+                                                src="/api/placeholder/400/250" 
+                                                alt="Office Space Rentals" 
+                                                className="w-full h-48 object-cover"
+                                          />
+                                          <div className="absolute inset-x-0 top-40 bg-white bg-opacity-90 px-6 py-2">
+                                                <h3 className="text-2xl font-bold text-center text-gray-800">Office Space Rentals</h3>
+                                          </div>
+                                          <div className="p-6 pt-8">
+                                                <p className="text-lg mb-4">Professional office space available for rent, perfect for small businesses.</p>
+                                                <p className="text-xl font-bold text-red-600 mb-4">Call for pricing</p>
+                                                <Link 
+                                                      to="/services/offices"
+                                                      className="inline-block bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition"
+                                                >
+                                                      Learn More
+                                                </Link>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </section>
                   
                   {/* About Section */}
                   <section id="about" className="py-20">
